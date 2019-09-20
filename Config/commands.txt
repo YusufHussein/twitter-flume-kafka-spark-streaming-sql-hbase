@@ -1,0 +1,8 @@
+flume-ng agent -n TwitterKafkaAgent -c conf -f '/home/cloudera/workspace/FinalProject/Config/TwitterKafka.conf' -Dflume.root.logger=INFO,console
+ 
+ bin/kafka-server-start.sh config/server.properties
+ 
+ bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic Trump
+ 
+ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic Trump
+ 
